@@ -1,4 +1,4 @@
-source 'http://localhost:8808'
+source 'http://rubygems.org'
 
 ruby '1.9.3'
 #ruby-gemset=railstutorial_rails_4_0
