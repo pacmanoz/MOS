@@ -11,19 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140703024411) do
+ActiveRecord::Schema.define(version: 20140703025310) do
 
   create_table "employees", force: true do |t|
     t.string   "name"
     t.boolean  "at_work"
-    t.decimal  "working_hours", precision: 3, scale: 1
+    t.decimal  "working_hours",  precision: 3, scale: 1
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "breaks",        precision: 3, scale: 1
-    t.decimal  "huddle",        precision: 3, scale: 1
-    t.decimal  "one_on_ones",   precision: 3, scale: 1
-    t.decimal  "team_meetings", precision: 3, scale: 1
-    t.decimal  "other",         precision: 3, scale: 1
+    t.decimal  "breaks",         precision: 3, scale: 1
+    t.decimal  "huddle",         precision: 3, scale: 1
+    t.decimal  "one_on_ones",    precision: 3, scale: 1
+    t.decimal  "team_meetings",  precision: 3, scale: 1
+    t.decimal  "other",          precision: 3, scale: 1
+    t.decimal  "other_meetings", precision: 3, scale: 1
+    t.decimal  "training",       precision: 3, scale: 1
   end
 
   create_table "users", force: true do |t|

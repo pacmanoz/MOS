@@ -3,6 +3,7 @@ namespace :db do
   task populate: :environment do
     make_users
     make_employees
+  end
 end
 
 def make_users
@@ -20,6 +21,7 @@ def make_users
                  password: password,
                  password_confirmation: password)
   end
+end
 
 def make_employees
   2.times do |n|
@@ -34,12 +36,14 @@ def make_employees
     training       = 0.6
     other          = 0.7
     Employee.create!(name:           name,
-                     at_work:        at_work
-                     working_hours:  working_hours
-                     breaks:         breaks
-                     huddle:         huddle
-                     one_on_ones:    one_on_ones
-                     team_meetings:  team_meetings
-                     other_meetings: other_meetings
+                     at_work:        at_work,
+                     working_hours:  working_hours,
+                     breaks:         breaks,
+                     huddle:         huddle,
+                     one_on_ones:    one_on_ones,
+                     team_meetings:  team_meetings,
+                     other_meetings: other_meetings,
+                     training:       training,
                      other:          other)
+  end
 end
