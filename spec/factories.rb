@@ -9,4 +9,9 @@ FactoryGirl.define do
       admin true
     end    
   end
+
+  factory :employee do
+  	name "First Employee"
+   	user
+  end
 end

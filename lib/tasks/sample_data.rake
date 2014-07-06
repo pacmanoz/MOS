@@ -24,7 +24,7 @@ def make_users
 end
 
 def make_employees
-  2.times do |n|
+  10.times do |n|
     name           = Faker::Name.name
     at_work        = true
     working_hours  = 8.5
@@ -35,6 +35,7 @@ def make_employees
     other_meetings = 0.5
     training       = 0.6
     other          = 0.7
+    user_id        = 1
     Employee.create!(name:           name,
                      at_work:        at_work,
                      working_hours:  working_hours,
@@ -44,6 +45,7 @@ def make_employees
                      team_meetings:  team_meetings,
                      other_meetings: other_meetings,
                      training:       training,
-                     other:          other)
+                     other:          other,
+                     user_id:        user_id)
   end
 end

@@ -16,6 +16,7 @@ describe User do
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
+  it { should respond_to(:employees) }
   
   it { should be_valid }
   it { should_not be_admin }
@@ -120,5 +121,30 @@ describe User do
   describe "remember token" do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
+  end
+
+  describe "employee associations" do
+# should change this to do the employees in alphabetic order?
+    before { @user.save }
+    let!(:older_employee) do
+      FactoryGirl.create(:employee, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_employee) do
+      FactoryGirl.create(:employee, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right employees in the right order" do
+      expect(@user.employees.to_a).to eq [newer_employee, older_employee]
+    end
+
+    it "should destroy associated employees" do
+      employees = @user.employees.to_a
+      @user.destroy
+      expect(employees).not_to be_empty
+      employees.each do |employee|
+        expect(Employee.where(id: employee.id)).to be_empty
+      end
+    end
+
   end
 end

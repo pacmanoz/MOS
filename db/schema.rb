@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140703025310) do
+ActiveRecord::Schema.define(version: 20140704100258) do
 
   create_table "employees", force: true do |t|
     t.string   "name"
@@ -26,7 +26,10 @@ ActiveRecord::Schema.define(version: 20140703025310) do
     t.decimal  "other",          precision: 3, scale: 1
     t.decimal  "other_meetings", precision: 3, scale: 1
     t.decimal  "training",       precision: 3, scale: 1
+    t.integer  "user_id"
   end
+
+  add_index "employees", ["user_id", "id"], name: "index_employees_on_user_id_and_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

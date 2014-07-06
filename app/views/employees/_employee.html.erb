@@ -1,0 +1,15 @@
+<li>
+  <span class="content"><%= employee.name %></span>
+  <span class="content"><%= employee.at_work %></span>
+  <span class="content"><%= employee.working_hours %></span>
+  <span class="content"><%= employee.breaks %></span>
+  <span class="content"><%= employee.huddle %></span>
+  <span class="content"><%= employee.one_on_ones %></span>
+  <span class="content"><%= employee.team_meetings %></span>
+  <span class="content"><%= employee.other %></span>
+  <span class="content"><%= employee.other_meetings %></span>
+  <span class="content"><%= employee.training %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(employee.created_at) %> ago.
+  </span>
+</li>
