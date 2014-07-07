@@ -10,10 +10,21 @@
   </aside>
   <div class="span8">
     <% if @user.employees.any? %>
-      <h3>Employees (<%= @user.employees.count %>)</h3>
-      <ol class="employees">
+      <h3>Available Hours (<%= @user.employees.count %>)</h3>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>At Work?</th>
+          <th>Breaks</th>
+          <th>Huddle</th>
+          <th>One on Ones</th>
+          <th>Team Meetings</th>
+          <th>Other</th>
+          <th>Other Meetings</th>
+          <th>Training</th>
+      </tr>
         <%= render @employees %>
-      </ol>
+      </table>
       <%= will_paginate @employees %>
     <% end %>
   </div>
