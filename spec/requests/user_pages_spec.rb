@@ -65,7 +65,6 @@ describe "User pages" do
     describe "employees" do
       it { should have_content(m1.name) }
       it { should have_content(m2.name) } 
-      it { should have_content(user.employees.count) }
     end    
   end
 

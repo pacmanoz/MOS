@@ -1,7 +1,8 @@
 <% @employees.each do |employee| %>
 <tr>
   <td><%= employee.name %></td>
-  <td><%= employee.at_work %></td>
+  <td><%= employee.working_hours %></td>
+  <td><%= employee.at_work ? 'Yes' : 'No' %></td>
   <td><%= employee.breaks %></td>
   <td><%= employee.huddle %></td>
   <td><%= employee.one_on_ones %></td>

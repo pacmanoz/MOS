@@ -8,24 +8,28 @@
       </h1>
     </section>
   </aside>
-  <div class="span8">
+</div>
+<div class="row">
+  <div class="span12">
     <% if @user.employees.any? %>
-      <h3>Available Hours (<%= @user.employees.count %>)</h3>
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>At Work?</th>
-          <th>Breaks</th>
-          <th>Huddle</th>
-          <th>One on Ones</th>
-          <th>Team Meetings</th>
-          <th>Other</th>
-          <th>Other Meetings</th>
-          <th>Training</th>
-      </tr>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Working Hours</th>
+            <th>At Work?</th>
+            <th>Breaks</th>
+            <th>Huddle</th>
+            <th>One on Ones</th>
+            <th>Team Meetings</th>
+            <th>Other</th>
+            <th>Other Meetings</th>
+            <th>Training</th>
+          </tr>
+        </thead>
+
         <%= render @employees %>
       </table>
-      <%= will_paginate @employees %>
     <% end %>
   </div>
 </div>
