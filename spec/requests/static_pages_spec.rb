@@ -36,11 +36,11 @@ describe "Static pages" do
     it_should_behave_like "all static pages"
   end
  
-  describe "Employee page" do
+  describe "Available Hours page" do
     before { visit employee_path }
 
-    let(:heading)    { 'Employee' }
-    let(:page_title) { 'Employee' }
+    let(:heading)    { 'Available Hours' }
+    let(:page_title) { 'Available Hours' }
 
     it_should_behave_like "all static pages"
   end
@@ -53,8 +53,8 @@ describe "Static pages" do
     expect(page).to have_title(full_title('Help'))
     click_link "Contact"
     expect(page).to have_title(full_title('Contact'))
-    click_link "Employee"
-    expect(page).to have_title(full_title('Employee'))
+    click_link "Available Hours"
+    expect(page).to have_title(full_title('Available Hours'))
     click_link "Home"
     click_link "Sign up now!"
     expect(page).to have_title(full_title('Sign up'))
